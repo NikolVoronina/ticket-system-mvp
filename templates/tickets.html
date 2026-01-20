@@ -1,0 +1,17 @@
+<h1>My Tickets</h1>
+
+<a href="/tickets/new">New ticket</a>
+<br /><br />
+
+<ul>
+  {% for ticket in tickets %}
+    <li>
+      <strong>{{ ticket.tittel }}</strong>
+      — Status: {{ ticket.status }}
+    </li>
+  {% else %}
+    <li>No tickets yet</li>
+  {% endfor %}
+</ul>
+
+<a href="/">Home</a>
