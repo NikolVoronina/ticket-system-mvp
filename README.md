@@ -84,3 +84,19 @@ flask run
 
 Open in browser:
 http://127.0.0.1:5000
+
+
+
+What I Learned
+
+Building a Flask application from scratch
+
+Working with relational databases (MariaDB)
+
+Implementing authentication and authorization
+
+Using sessions and role-based access
+
+Structuring a backend project for further development
+
+Using GitHub for version control and collaboration
