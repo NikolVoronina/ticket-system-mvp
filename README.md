@@ -61,3 +61,26 @@ The system is built with **Flask** and **MariaDB** and is designed to be easy to
 ```bash
 git clone <repository-url>
 cd code
+
+
+2. Create virtual environment
+py -m venv .venv
+.venv\Scripts\activate
+
+3. Install dependencies
+pip install -r requirements.txt
+
+4. Environment variables
+
+Create a .env file based on .env.example and configure database credentials.
+
+5. Create database
+mysql -u root -p < schema.sql
+
+6. Run the application
+set FLASK_APP=app.py
+flask run
+
+
+Open in browser:
+http://127.0.0.1:5000
