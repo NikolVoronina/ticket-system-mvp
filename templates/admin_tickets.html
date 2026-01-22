@@ -1,0 +1,32 @@
+<h1>All Tickets (Drift)</h1>
+
+<ul>
+  {% for ticket in tickets %}
+    <li>
+      <strong>#{{ ticket.id }} — {{ ticket.tittel }}</strong><br />
+      From: {{ ticket.created_by }}<br />
+      Handler: {{ ticket.handler_name or "—" }}<br />
+      Status: {{ ticket.status }}<br /><br />
+
+      {% if not ticket.behandler_id %}
+        <form method="post" action="/admin/tickets/{{ ticket.id }}/take">
+          <button type="submit">Take ticket</button>
+        </form>
+      {% endif %}
+
+      <form method="post" action="/admin/tickets/{{ ticket.id }}/status">
+        <select name="status">
+          <option value="åpen">åpen</option>
+          <option value="under_arbeid">under arbeid</option>
+          <option value="lukket">lukket</option>
+        </select>
+        <button type="submit">Update status</button>
+      </form>
+    </li>
+    <hr />
+  {% else %}
+    <li>No tickets</li>
+  {% endfor %}
+</ul>
+
+<a href="/">Home</a>
